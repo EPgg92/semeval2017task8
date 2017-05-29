@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-from classes.data import Data
+from utils.classes.data import Data
 
 
 class Tweet(Data):
@@ -14,3 +14,12 @@ class Tweet(Data):
     def get_structure(self):
         """Return ID of the source Tweet."""
         return self.structure
+
+
+def main():
+    twe = Tweet({"id": 123, "text": "yolO loved lov"}, "sub", "cat", {})
+    print(twe.id, twe.text)
+
+
+if __name__ == '__main__':
+    main()

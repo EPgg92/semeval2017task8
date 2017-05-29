@@ -2,20 +2,22 @@
 # -*- coding: utf-8 -*-
 
 from collections import defaultdict as dd
-import func.preprocess as pp
+import utils.classes.func.preprocess as pp
+import numpy as np
 
 
 class Data(object):
     """Superclass Data."""
 
-    def __init__(self, data=dd(str), subject="", categorie=""):
+    def __init__(self, data, subject, categorie):
         """Initialisation."""
-        self.data = data
+        # self.data = data
         self.text = pp.lemmatize(pp.tokenise(
             pp.convert_to_lowercase(data["text"])))
         self.subject = subject
         self.data_id = data["id"]
         self.categorie = categorie
+        self.vector = np.array([])
 
     def get_text(self):
         """Return the text of the source Tweet or the reply."""
@@ -29,6 +31,18 @@ class Data(object):
         """Return the id of the source Tweet or the reply."""
         return self.data_id
 
+    def set_categorie(self, categorie):
+        """Set the categorie of the source Tweet or the reply."""
+        self.categorie = categorie
+
     def get_categorie(self):
         """Return the categorie of the source Tweet or the reply."""
         return self.categorie
+
+    def set_vector(self, vector):
+        """Set the vector of the source Tweet or the reply."""
+        self.vector = vector
+
+    def get_vector(self):
+        """Return the vector of the source Tweet or the reply."""
+        return self.vector

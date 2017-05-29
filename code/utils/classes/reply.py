@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-from classes.data import Data
+from utils.classes.data import Data
 
 
 class Reply(Data):
