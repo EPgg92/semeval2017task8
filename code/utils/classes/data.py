@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from collections import defaultdict as dd
+import func.preprocess as pp
 
 
 class Data(object):
@@ -10,7 +11,8 @@ class Data(object):
     def __init__(self, data=dd(str), subject="", categorie=""):
         """Initialisation."""
         self.data = data
-        self.text = data["text"].lower().split()
+        self.text = pp.lemmatize(pp.tokenise(
+            pp.convert_to_lowercase(data["text"])))
         self.subject = subject
         self.data_id = data["id"]
         self.categorie = categorie
