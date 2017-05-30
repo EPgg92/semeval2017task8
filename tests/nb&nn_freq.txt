@@ -1,0 +1,28 @@
+NB
+C:Predicted  comment  deny  query  support  All
+R:Actual
+comment           60    15     55       43  173
+deny               5     0      3        3   11
+query              9     1     12        6   28
+support           21    11     18       19   69
+All               95    27     88       71  281
+Accuracy:	32%
+Fscore:		23%
+Precision:	26%
+Recall:		26%
+
+NN
+C:Predicted  comment  All
+R:Actual
+comment          173  173
+deny              11   11
+query             28   28
+support           69   69
+All              281  281
+Accuracy:	62%
+Fscore:		19%
+Precision:	15%
+Recall:		25%
+
+
+Chronometer: 598.1s
