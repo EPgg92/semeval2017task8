@@ -30,7 +30,7 @@ def vectorise_train(train):
 
 def vectorise_freq_train(train):
     train, all_words = vectorise_train(train)
-    _UNK_ = 0.003
+    _UNK_ = -1
     list_cat = dd(list)
     set_cat = dd(set)
     freq = dd(lambda: dd(float))
@@ -62,7 +62,7 @@ def vectorise_test(test, all_words):
         for word in rep_twe.get_text():
             if word in all_words:
                 vector[all_words.index(word)] += 1
-        rep_twe.set_vector(np.append(vector))
+        rep_twe.set_vector(np.array(vector))
     return test
 
 
