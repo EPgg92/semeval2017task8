@@ -28,6 +28,19 @@ def vectorise_train(train):
     return train, all_words
 
 
+
+
+def vectorise_test(test, all_words):
+    for rep_twe in test:
+        vector = np.zeros(len(all_words))
+        for word in rep_twe.get_text():
+            if word in all_words:
+                vector[all_words.index(word)] += 1
+        rep_twe.set_vector(np.array(vector))
+    return test
+
+
+
 def vectorise_freq_train(train):
     train, all_words = vectorise_train(train)
     _UNK_ = -1
@@ -54,17 +67,6 @@ def vectorise_freq_train(train):
             vector.extend(list(vectorcat))
         rep_twe.set_vector(np.array(vector))
     return train, all_words,  freq
-
-
-def vectorise_test(test, all_words):
-    for rep_twe in test:
-        vector = np.zeros(len(all_words))
-        for word in rep_twe.get_text():
-            if word in all_words:
-                vector[all_words.index(word)] += 1
-        rep_twe.set_vector(np.array(vector))
-    return test
-
 
 def vectorise_freq_test(test, all_words, freq):
     for rep_twe in test:
