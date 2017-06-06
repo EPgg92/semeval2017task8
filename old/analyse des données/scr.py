@@ -131,7 +131,7 @@ def getInfo(data, nameSet):
     count = dd(lambda: dd(int))
     countCatWord = dd(list)
     for r in data:
-        count[str(type(r))][r.categorie] += 1
+        count[r.subject][r.categorie] += 1
         countCatWord[r.categorie] += r.text
     countCat = dd(int)
     for sub in sorted(count.keys()):
