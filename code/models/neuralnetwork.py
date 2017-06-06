@@ -24,6 +24,11 @@ def create_trained_nn(vecs_train, labels_train, epochs=50):
     return model
 
 
+def retrain_model(model, vecs_train, labels_train, epochs=50):
+    model.fit(vecs_train, labels_train, epochs=epochs, batch_size=32)
+    return model
+
+
 def convert_label_in_number(labels, list_label):
     return np.array([list_label.index(lab) for lab in labels])
 
@@ -35,3 +40,16 @@ def convert_number_to_label(pred, list_label):
 def predict_nn(model, vecs_test, labels_test):
     return [(pred, label) for pred, label in zip(
         model.predict_classes(vecs_test), labels_test)]
+
+
+def main():
+    train_vecs = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+    train_label = np.array([0, 1, 1, 1])
+    test_vecs = np.array([[0, 0], [1, 1]])
+    test_label = np.array([0, 1])
+    model = create_trained_nn(train_vecs, train_label, 10)
+    model = retrain_model(model, train_vecs, train_label, 10)
+
+
+if __name__ == '__main__':
+    main()

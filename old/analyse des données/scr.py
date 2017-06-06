@@ -110,7 +110,7 @@ def getInfo(data, nameSet):
         )
         plt.legend()
         plt.title("Pie of the " + nameSet + " set.\n" + sub)
-        plt.show()
+        # plt.show()
 
     def createHisto(word_list, cat, color):
         counts = Counter(word_list)
@@ -126,7 +126,7 @@ def getInfo(data, nameSet):
         plt.bar(indexes, values, bar_width, color=color, align='edge')
         plt.xticks(indexes + bar_width / 2, labels)
         plt.title(cat)
-        plt.show()
+        # plt.show()
 
     count = dd(lambda: dd(int))
     countCatWord = dd(list)
@@ -230,9 +230,12 @@ def main():
     train = get_X_dataset(
         dataset, "../semeval2017-task8-dataset/traindev/rumoureval-subtaskA-train.json")
     countCat, countCatWord = getInfo(train, "train")
-    probAp, pW = transformVar(countCat, countCatWord, i=0.3)
+    probAp, pW = transformVar(countCat, countCatWord, i=0.00000000000001)
     tConf, forScore = testing0(test, probAp, pW)
     print(printTConf(tConf))
+    # print(forScore)
+    with open("score.json", 'w') as outfile:
+        json.dump(forScore, outfile)
     print("\nChronometer: " + str(round(chrono.stop(), 2)) + "s")
 
 

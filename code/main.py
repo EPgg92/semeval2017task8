@@ -28,7 +28,7 @@ def main():
 
     list_label = sorted(list(set(train_labels)))
     train_labels = nn.convert_label_in_number(train_labels, list_label)
-    nn_model = nn.create_trained_nn(train_vecs, train_labels, epochs=400)
+    nn_model = nn.create_trained_nn(train_vecs, train_labels, epochs=10)
     test_labels = nn.convert_label_in_number(test_labels, list_label)
 
     pred_label = nn.convert_number_to_label(
