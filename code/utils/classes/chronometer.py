@@ -13,6 +13,10 @@ class Chronometer():
         """Initialisation."""
         self.start = time.time()
 
+    def rinit(self):
+        """Réinitialisation."""
+        self.start = time.time()
+
     def stop(self):
         """Return time flow out since chronometer's departure."""
         return time.time() - self.start

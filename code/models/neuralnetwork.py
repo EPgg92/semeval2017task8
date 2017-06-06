@@ -45,10 +45,13 @@ def predict_nn(model, vecs_test, labels_test):
 def main():
     train_vecs = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
     train_label = np.array([0, 1, 1, 1])
-    test_vecs = np.array([[0, 0], [1, 1]])
-    test_label = np.array([0, 1])
-    model = create_trained_nn(train_vecs, train_label, 10)
-    model = retrain_model(model, train_vecs, train_label, 10)
+    test_vecs = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+    test_label = np.array([0, 1, 1, 1])
+    model = create_trained_nn(train_vecs, train_label, 100)
+
+    model = retrain_model(model, train_vecs, train_label, 100)
+    loss, acc = model.evaluate(test_vecs, test_label)
+    print(loss, acc)
 
 
 if __name__ == '__main__':
