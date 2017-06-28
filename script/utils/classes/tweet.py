@@ -10,6 +10,7 @@ class Tweet(Data):
         """Initialisation using super class Data."""
         super(Tweet, self).__init__(data, subject, categorie)
         self.structure = structure
+        self.isSource = 1
 
     def get_structure(self):
         """Return ID of the source Tweet."""

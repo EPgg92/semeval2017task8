@@ -30,10 +30,10 @@ def main():
     str0 += ms.all_mesure(pred_label)
     str0 += chrono.str_flow_out() + "\n"
     chrono.rinit()
-    list_label = sorted(list(set(train_labels)))
-    train_labels = nn.convert_label_in_number(train_labels, list_label)
+    # list_label = sorted(list(set(train_labels)))
+    # train_labels = nn.convert_label_in_number(train_labels, list_label)
     nn_model = nn.create_trained_nn(train_vecs, train_labels, epochs=50)
-    test_labels = nn.convert_label_in_number(test_labels, list_label)
+    # test_labels = nn.convert_label_in_number(test_labels, list_label)
     pred_label = nn.convert_number_to_label(
         nn.predict_nn(nn_model, test_vecs, test_labels), list_label)
     str0 += "\nModel Neural Network:\nEpochs: 50\n"

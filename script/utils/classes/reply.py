@@ -10,6 +10,7 @@ class Reply(Data):
         """Initialisation using super class Data."""
         super(Reply, self).__init__(data, subject, categorie)
         self.source = source_tweet
+        self.rp = -10
 
     def get_source(self):
         """Return ID of the source Tweet."""
