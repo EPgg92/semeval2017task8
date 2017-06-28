@@ -7,7 +7,7 @@ from nltk.stem.lancaster import LancasterStemmer
 from nltk.tokenize import TweetTokenizer
 from nltk import ngrams
 
-STOP_WORDS = "~/SE8-2017/code/classes/func/stop_words.txt"
+STOP_WORDS = "~/SE8-2017/script/utils/stop_words.txt"
 
 
 def __get_stopwords(path_stopwords):
@@ -53,7 +53,7 @@ def main():
     sentence = "This is my sentence, it's a bit short; but I still like it"
     print(convert_to_lowercase(sentence))
     print(tokenise(sentence))
-    print(remove_stopwords(tokenise(sentence), "stop_words.txt"))
+    print(remove_stopwords(tokenise(sentence), "utils/stop_words.txt"))
     print(lemmatize(tokenise(sentence)))
     print(convert_to_ngrams_word(lemmatize(tokenise(sentence)), 3))
     print(convert_to_ngrams_char(sentence, 4))

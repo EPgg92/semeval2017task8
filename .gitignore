@@ -5,6 +5,7 @@ __pycache__/
 code/scr.py
 # C extensions
 *.so
+dataset/my_datasets
 
 # Distribution / packaging
 .Python
