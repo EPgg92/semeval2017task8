@@ -9,8 +9,10 @@ class Reply(Data):
     def __init__(self, data, subject, categorie, source_tweet):
         """Initialisation using super class Data."""
         super(Reply, self).__init__(data, subject, categorie)
-        self.source = source_tweet
-        self.rp = -10
+        self.source = int(source_tweet)
+
+    def __str__(self):
+        return "{}\t{}".format(super(Reply, self).__str__(), str(self.source))
 
     def get_source(self):
         """Return ID of the source Tweet."""
