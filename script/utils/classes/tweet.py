@@ -10,16 +10,20 @@ class Tweet(Data):
         """Initialisation using super class Data."""
         super(Tweet, self).__init__(data, subject, categorie)
         self.structure = structure
-        self.isSource = 1
+        self.source = self.get_id()
 
     def get_structure(self):
         """Return ID of the source Tweet."""
         return self.structure
 
+    def get_source(self):
+        """Return ID of the source Tweet. Here the same ID"""
+        return self.source
+
 
 def main():
     twe = Tweet({"id": 123, "text": "yolO loved lov"}, "sub", "cat", {})
-    print(twe.id, twe.text)
+    # print(twe.id, twe.text)
 
 
 if __name__ == '__main__':
