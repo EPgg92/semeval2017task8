@@ -27,10 +27,10 @@ def test_it(hyp):
     model = nn.create_trained_nn(train_vecs, train_labels, 1)
     epochs = 1
     loss, acc = model.evaluate(train_vecs, train_labels)
-    while acc < 0.95 or epochs < 300:
+    while acc < 0.95 and epochs < 300:
         for_graph.append((epochs, loss, acc))
         epochs += 1
-        nn.retrain_model(model, vecs_train, labels_train, 1)
+        nn.retrain_model(model, train_vecs, train_labels, 1)
     pred_label = nn.predict_nn(model, test_vecs, test_labels)
     pred_label = [(vc.convert_map_to_label(p), vc.convert_map_to_label(l))
                   for p, l in pred_label]
