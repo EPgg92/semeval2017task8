@@ -55,9 +55,9 @@ def main():
     lDev = add_source_to_vecs(tweets_dev, sources_dev, lDev)
 
     print("Saving")
-    futils.create_json("../dataset/my_datasets/hyp3bis_train_vecs.json",
+    futils.create_json("../dataset/my_datasets/hyp6bis_train_vecs.json",
                        lTrain)
-    futils.create_json("../dataset/my_datasets/hyp3bis_dev_vecs.json",
+    futils.create_json("../dataset/my_datasets/hyp6bis_dev_vecs.json",
                        lDev)
 
 

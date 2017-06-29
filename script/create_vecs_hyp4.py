@@ -6,12 +6,12 @@ import utils.function as futils
 import utils.preprocess as putils
 
 
-def hyp1_pp(str0):
+def hyp4_pp(str0):
     return putils.convert_to_ngrams_char(putils.convert_to_lowercase(str0), 3)
 
 
 def get_label_col(index, var):
-    return [hyp1_pp(v[index]) for v in var]
+    return [hyp4_pp(v[index]) for v in var]
 
 
 def main():
@@ -25,9 +25,9 @@ def main():
     lTrain, all_words = vutils.vectorise_train(lTrain)
     lDdev = vutils.vectorise_test(lDev, all_words)
     print("Saving")
-    futils.create_json("../dataset/my_datasets/hyp1_train_vecs.json",
+    futils.create_json("../dataset/my_datasets/hyp4_train_vecs.json",
                        lTrain)
-    futils.create_json("../dataset/my_datasets/hyp1_dev_vecs.json",
+    futils.create_json("../dataset/my_datasets/hyp4_dev_vecs.json",
                        lDdev)
 
 

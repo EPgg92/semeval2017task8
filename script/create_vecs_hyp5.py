@@ -41,9 +41,9 @@ def main():
     lTrain = add_objType_to_vec(lTrain, objType_train)
     lDev = add_objType_to_vec(lDev, objType_Dev)
     print("Saving")
-    futils.create_json("../dataset/my_datasets/hyp2_train_vecs.json",
+    futils.create_json("../dataset/my_datasets/hyp5_train_vecs.json",
                        lTrain)
-    futils.create_json("../dataset/my_datasets/hyp2_dev_vecs.json",
+    futils.create_json("../dataset/my_datasets/hyp5_dev_vecs.json",
                        lDev)
 
 
