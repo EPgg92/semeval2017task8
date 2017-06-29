@@ -28,7 +28,7 @@ def test_it(hyp):
     epochs = 1
     loss, acc = model.evaluate(train_vecs, train_labels)
     while acc < 0.95 or epochs < 300:
-        for_graph.append(epochs, loss, acc)
+        for_graph.append((epochs, loss, acc))
         epochs += 1
         nn.retrain_model(model, vecs_train, labels_train, 1)
     pred_label = nn.predict_nn(model, test_vecs, test_labels)
