@@ -7,13 +7,11 @@ from collections import Counter as ct
 
 
 def convert_label_to_map(lab):
-    convert_lab = {"comment": [1, 0, 0, 0], 'deny': [
-        0, 1, 0, 0], 'query': [0, 0, 1, 0], 'support': [0, 0, 0, 1]}
+    convert_lab = {"comment": 0, 'deny': 1, 'query': 2, 'support': 3}
     return convert_lab[lab]
 
 
 def convert_map_to_label(mapx):
-    mapx = mapx.index(1)
     convert_map = {0: "comment", 1: 'deny',
                    2: 'query',  3: 'support'}
     return convert_map[mapx]
