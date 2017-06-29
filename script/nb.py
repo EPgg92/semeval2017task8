@@ -12,6 +12,7 @@ import sys
 
 
 def test_it(hyp):
+    print(hyp)
     print("Extraction")
     train_vecs = np.array(futils.open_json(
         "../dataset/my_datasets/{}_train_vecs.json".format(hyp)))
