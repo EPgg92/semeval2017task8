@@ -33,21 +33,21 @@ def precision(pred_label):
     y_label = [y for _, y in pred_label]
     y_pred = [y for y, _ in pred_label]
     return "Precision:\t{:.0%}".format(
-        precision_score(y_label, y_pred, average='macro'))
+        precision_score(y_label, y_pred, average='weighted'))
 
 
 def recall(pred_label):
     y_label = [y for _, y in pred_label]
     y_pred = [y for y, _ in pred_label]
     return "Recall:\t\t{:.0%}".format(
-        recall_score(y_label, y_pred, average='macro'))
+        recall_score(y_label, y_pred, average='weighted'))
 
 
 def fscore(pred_label):
     y_label = [y for _, y in pred_label]
     y_pred = [y for y, _ in pred_label]
     return "Fscore:\t\t{:.0%}".format(
-        fbeta_score(y_label, y_pred, average='macro', beta=1))
+        fbeta_score(y_label, y_pred, average='weighted', beta=1))
 
 
 def all_mesure(pred_label):
