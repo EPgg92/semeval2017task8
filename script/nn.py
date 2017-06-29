@@ -8,6 +8,7 @@ import json
 import models.neuralnetwork as nn
 import utils.mesure as ms
 import utils.vectorise as vc
+import sys
 
 
 def test_it(hyp):
