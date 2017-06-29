@@ -26,7 +26,7 @@ def conf_tab(pred_label):
 def accuracy(pred_label):
     y_label = [y for _, y in pred_label]
     y_pred = [y for y, _ in pred_label]
-    return "Accuracy:\t{:.0%}".format(accuracy_score(y_label, y_pred))
+    return "Accuracy:\t{}".format(accuracy_score(y_label, y_pred))
 
 
 def precision(pred_label):
