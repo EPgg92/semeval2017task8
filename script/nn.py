@@ -29,7 +29,7 @@ def test_it(hyp):
     model = nn.create_trained_nn(train_vecs, train_labels, 1)
     epochs = 1
     loss, acc = model.evaluate(train_vecs, train_labels)
-    while acc < 0.95 and epochs < 2:
+    while acc < 0.9999 and epochs < 1000:
         for_graph.append((epochs, loss, acc))
         loss, acc = model.evaluate(train_vecs, train_labels)
         epochs += 1
