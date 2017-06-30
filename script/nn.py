@@ -13,7 +13,6 @@ import sys
 
 def test_it(hyp):
     for_graph = []
-    for_graph_test = []
     str0 = ''
     print(hyp)
     str0 += hyp + '\n'
@@ -30,11 +29,9 @@ def test_it(hyp):
     model = nn.create_trained_nn(train_vecs, train_labels, 1)
     epochs = 1
     loss, acc = model.evaluate(train_vecs, train_labels)
-    while acc < 0.9993 and epochs < 300:
+    while acc < 0.94 and epochs < 300:
         for_graph.append((epochs, loss, acc))
         loss, acc = model.evaluate(train_vecs, train_labels)
-        loss_test, acc_test = model.evaluate(test_vecs, test_labels)
-        for_graph_test.append((epochs, loss_test, acc_test))
         epochs += 1
         print("Epochs: {}".format(epochs))
         nn.retrain_model(model, train_vecs, train_labels, 1)
@@ -44,8 +41,6 @@ def test_it(hyp):
     str0 += ms.all_mesure(pred_label)
     str0 += "Epochs: {}".format(epochs)
     futils.create_json("../tests/for_graph/{}.json".format(hyp), for_graph)
-    futils.create_json(
-        "../tests/for_graph/{}_test.json".format(hyp), for_graph_test)
     with open("../tests/nn_{}.txt".format(hyp), 'w+') as stream:
         stream.write(str0)
 
