@@ -1,0 +1,13 @@
+hyp6
+C:Predicted  comment  deny  query  support  All
+R:Actual                                       
+comment          140     6      0       27  173
+deny               3     5      1        2   11
+query             23     0      2        3   28
+support           40     0      2       27   69
+All              206    11      5       59  281
+Accuracy:	0.6192170818505338
+Fscore:		59%
+Precision:	59%
+Recall:		62%
+Epochs: 26
