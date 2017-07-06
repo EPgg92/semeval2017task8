@@ -41,23 +41,11 @@ def convert_to_lowercase(sentence):
 
 
 def convert_to_ngrams_word(sentence, n, sep=" "):
+    """Convert sentences to list of n-grams on word."""
     return [sep.join(ng) for ng in ngrams(sentence, n)]
 
 
 def convert_to_ngrams_char(sentence, n, sep=""):
+    """Convert sentences to list of n-grams on char."""
     return convert_to_ngrams_word(
         list(sentence), n, sep)
-
-
-def main():
-    sentence = "This is my sentence, it's a bit short; but I still like it"
-    print(convert_to_lowercase(sentence))
-    print(tokenise(sentence))
-    print(remove_stopwords(tokenise(sentence), "utils/stop_words.txt"))
-    print(lemmatize(tokenise(sentence)))
-    print(convert_to_ngrams_word(lemmatize(tokenise(sentence)), 3))
-    print(convert_to_ngrams_char(sentence, 4))
-
-
-if __name__ == '__main__':
-    main()

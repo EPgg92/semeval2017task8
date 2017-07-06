@@ -12,6 +12,7 @@ class Reply(Data):
         self.source = int(source_tweet)
 
     def __str__(self):
+        """Return a good string presentation."""
         return "{}\t{}".format(super(Reply, self).__str__(), str(self.source))
 
     def get_source(self):

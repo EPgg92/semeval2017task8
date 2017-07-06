@@ -1,6 +1,8 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""Tools."""
+
 import json
 from collections import defaultdict as dd
 

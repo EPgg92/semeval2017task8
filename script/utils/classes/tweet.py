@@ -19,12 +19,3 @@ class Tweet(Data):
     def get_source(self):
         """Return ID of the source Tweet. Here the same ID"""
         return self.source
-
-
-def main():
-    twe = Tweet({"id": 123, "text": "yolO loved lov"}, "sub", "cat", {})
-    # print(twe.id, twe.text)
-
-
-if __name__ == '__main__':
-    main()

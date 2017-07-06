@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""Function to do mesure."""
+
 from collections import defaultdict as dd
 import pandas as pd
 from sklearn.metrics import accuracy_score
@@ -9,6 +11,7 @@ from sklearn.metrics import fbeta_score
 
 
 def create_dic(pred_label):
+    """Return a dictionnary of the count of pred and label."""
     dic = dd(lambda: dd(int))
     for pred, label in pred_label:
         dic[pred][label] += 1
@@ -16,6 +19,7 @@ def create_dic(pred_label):
 
 
 def conf_tab(pred_label):
+    """Return a string of the confusion table."""
     y_label = pd.Series([y for _, y in pred_label], name='Actual')
     y_pred = pd.Series([y for y, _ in pred_label], name='Predicted')
     df_confusion = pd.crosstab(y_label, y_pred, rownames=['R:Actual'],
@@ -24,12 +28,14 @@ def conf_tab(pred_label):
 
 
 def accuracy(pred_label):
+    """Return a string of the accuracy."""
     y_label = [y for _, y in pred_label]
     y_pred = [y for y, _ in pred_label]
     return "Accuracy:\t{}".format(accuracy_score(y_label, y_pred))
 
 
 def precision(pred_label):
+    """Return a string of the precision."""
     y_label = [y for _, y in pred_label]
     y_pred = [y for y, _ in pred_label]
     return "Precision:\t{:.0%}".format(
@@ -37,6 +43,7 @@ def precision(pred_label):
 
 
 def recall(pred_label):
+    """Return a string of the recall."""
     y_label = [y for _, y in pred_label]
     y_pred = [y for y, _ in pred_label]
     return "Recall:\t\t{:.0%}".format(
@@ -44,6 +51,7 @@ def recall(pred_label):
 
 
 def fscore(pred_label):
+    """Return a string of the f-score."""
     y_label = [y for _, y in pred_label]
     y_pred = [y for y, _ in pred_label]
     return "Fscore:\t\t{:.0%}".format(
@@ -51,6 +59,7 @@ def fscore(pred_label):
 
 
 def all_mesure(pred_label):
+    """Return a string of all the precedente mesures."""
     return "\n".join([
         conf_tab(pred_label),
         accuracy(pred_label),

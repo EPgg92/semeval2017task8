@@ -1,6 +1,8 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""Tools to create datasets."""
+
 from collections import defaultdict as dd
 from utils.classes.data import Data
 from utils.classes.reply import Reply
@@ -28,6 +30,7 @@ def create_dataset():
 
 
 def get_X_dataset(dataset, X):
+    """Permit to get train or test datasets."""
     categories = f.open_json(X)
     x_set = []
     for key in categories:

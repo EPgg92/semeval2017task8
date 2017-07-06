@@ -18,6 +18,7 @@ class Data(object):
         self.vector = np.array([])
 
     def __str__(self):
+        """Return a good string presentation."""
         return "\t".join(
             [str(self.data_id),
              self.categorie,
